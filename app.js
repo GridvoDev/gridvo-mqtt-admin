@@ -9,7 +9,7 @@ app = express();
 app.use('/mqtt', mqttRouter);
 let mqttTopicService = createMqttTopicService();
 app.set('mqttTopicService', mqttTopicService);
-app.listen(3001, (err) => {
+app.listen(9191, (err) => {
     if (err) {
         logger.error(err.message);
     }

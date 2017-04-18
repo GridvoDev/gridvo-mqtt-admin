@@ -17,7 +17,7 @@ spec:
         image: 10.0.3.31:5000/gridvo/gridvo-mqtt-admin:dev
         imagePullPolicy: Always
         ports:
-        - containerPort: 3001
+        - containerPort: 9191
         env:
         - name: MONGODB_SERVICE_HOST
           value: "mongodb"
