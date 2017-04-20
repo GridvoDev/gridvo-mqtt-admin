@@ -6,6 +6,7 @@ const {createMqttTopicService} = require('./lib/application');
 
 let app;
 app = express();
+app.use("/", express.static(__dirname + "/lib/express/publish"));
 app.use('/mqtt', mqttRouter);
 let mqttTopicService = createMqttTopicService();
 app.set('mqttTopicService', mqttTopicService);
