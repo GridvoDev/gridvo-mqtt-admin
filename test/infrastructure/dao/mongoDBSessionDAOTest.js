@@ -33,11 +33,12 @@ describe('mongoDBSessionDAO use case test', () => {
             });
             it('should return sessions', done => {
                 let options = {};
-                DAO.getSessions(options, (err, sessions) => {
+                DAO.getSessions(options, (err, result) => {
                     if (err) {
                         done(err);
                     }
-                    sessions.length.should.be.eql(1);
+                    result.total.should.be.eql(1);
+                    result.sessions.length.should.be.eql(1);
                     done();
                 });
             });

@@ -133,6 +133,9 @@ describe('mongoDBMqttPacketDAO use case test', () => {
                         done(err);
                     }
                     resultJSON.topic.should.be.eql("topic");
+                    resultJSON.total.should.be.eql(1);
+                    resultJSON.startTimestamp.should.be.eql(startTimestamp);
+                    resultJSON.endTimestamp.should.be.eql(endTimestamp);
                     resultJSON.packets.length.should.be.eql(1);
                     done();
                 });
