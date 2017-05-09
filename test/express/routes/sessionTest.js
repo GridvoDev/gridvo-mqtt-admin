@@ -14,7 +14,7 @@ describe('sessionRouter use case test', () => {
                 app.use('/sessions', sessionRouter);
                 let mockSessionService = {};
                 mockSessionService.getSessions = (options, callback) => {
-                    callback(null, []);
+                    callback(null, {sessions:[]});
                 }
                 app.set('sessionService', mockSessionService);
                 server = app.listen(3001, err => {
@@ -49,7 +49,7 @@ describe('sessionRouter use case test', () => {
                         }
                         res.body.errcode.should.be.eql(0);
                         res.body.errmsg.should.be.eql("ok");
-                        res.body.result.length.should.be.eql(0);
+                        res.body.result.sessions.length.should.be.eql(0);
                         done();
                     });
             });
